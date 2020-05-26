@@ -2,5 +2,5 @@ package patterns.strategy.lab2;
 
 public interface ValidateStrategy<T> {
 
-	void validate(T customer);
+	public void validate(T customer);
 }

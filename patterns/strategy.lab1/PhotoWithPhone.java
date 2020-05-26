@@ -7,11 +7,11 @@ public abstract class PhotoWithPhone {
 	abstract void edit();
 
 	void take() {
-		System.out.println("take photo");
+		System.out.println("taking photo...");
 	}
 
 	public void save() {
-		System.out.println("saving photo");
+		System.out.println("saving photo...");
 	}
 
 	public void performShare() {

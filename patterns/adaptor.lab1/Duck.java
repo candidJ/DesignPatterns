@@ -2,7 +2,7 @@ package patterns.adapter.lab1;
 
 public interface Duck {
 
-	void quack();
+	public void quack();
 
-	void fly();
+	public void fly();
 }

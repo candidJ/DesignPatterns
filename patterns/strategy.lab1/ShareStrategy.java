@@ -2,5 +2,5 @@ package patterns.strategy;
 
 @FunctionalInterface
 public interface ShareStrategy {
-	void share();
+	public void share();
 }
