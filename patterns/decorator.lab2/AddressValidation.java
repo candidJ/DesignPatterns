@@ -5,7 +5,7 @@ public class AddressValidation extends ValidateDecorator {
 	BasicValidation address;
 
 	public AddressValidation(BasicValidation validation) {
-//		super(validation);
+		super(validation);
 		this.address = validation;
 	}
 

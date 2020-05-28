@@ -5,7 +5,7 @@ public class PhoneNumberValidation extends ValidateDecorator{
 	
 	BasicValidation phone;
 	public PhoneNumberValidation(BasicValidation validation) {
-//		super(validation);
+		super(validation);
 		this.phone = validation;
 	}
 
