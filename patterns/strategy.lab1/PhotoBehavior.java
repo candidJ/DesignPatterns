@@ -1,10 +1,8 @@
-package patterns.strategy;
+package patterns.strategy.lab1;
 
-public abstract class PhotoWithPhone {
+public class PhotoBehavior {
 
 	ShareStrategy shareStrategy;
-
-	abstract void edit();
 
 	void take() {
 		System.out.println("taking photo...");

@@ -1,6 +1,5 @@
-package patterns.strategy;
+package patterns.strategy.lab1;
 
-@FunctionalInterface
 public interface ShareStrategy {
 	public void share();
 }

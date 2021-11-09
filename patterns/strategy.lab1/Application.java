@@ -1,21 +1,17 @@
-package patterns.strategy;
+package patterns.strategy.lab1;
 
 import java.util.Scanner;
 
 public class Application {
 
 	public static void main(String[] args) {
-//		PhotoWithPhone basic = new BasicCameraApps();
-//		basic.performShare();
-//
-//		PhotoWithPhone plus = new CameraAppPlus();
-//		plus.performShare();
-//
-//		PhotoWithPhone premium = new CameraAppPremium();
-//		premium.performShare();
+		PhotoBehavior basicCameraApp = new BasicCameraApp();
+		PhotoBehavior cameraAppPlus  = new CameraAppPlus();
+		basicCameraApp.performShare();
+		System.out.println("Before set behavior of Basic Camera App");
+		cameraAppPlus.performShare();
+		System.out.println("Before set behavior of Camera App Plus");
 
-		PhotoWithPhone basicApp = new BasicCameraApp();
-		PhotoWithPhone plusApp = new CameraAppPlus();
 		String userChoice = userSharingStrategy();
 		ShareStrategy share;
 
@@ -35,14 +31,16 @@ public class Application {
 		}
 
 		// basic app
-		basicApp.setSharingStragey(share);
-		basicApp.edit();
-		basicApp.performShare();
+		// behavior set dynamically by user at run time
+		basicCameraApp.setSharingStragey(share);
+		// new behavior is performed
+		basicCameraApp.performShare();
 
 		// plus app
-		plusApp.setSharingStragey(share);
-		plusApp.edit();
-		plusApp.performShare();
+		// behavior set dynamically by user at run time
+		cameraAppPlus.setSharingStragey(share);
+		// new behavior is performed
+		cameraAppPlus.performShare();
 	}
 
 	public static String userSharingStrategy() {

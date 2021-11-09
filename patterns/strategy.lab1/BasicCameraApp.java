@@ -1,24 +1,12 @@
-package patterns.strategy;
+package patterns.strategy.lab1;
 
-public class BasicCameraApp extends PhotoWithPhone {
-	@Override
+public class BasicCameraApp extends PhotoBehavior {
+
 	void edit() {
 		System.out.println("no filter applied...");
 	}
 
-//	public BasicCameraApp() {
-//		shareStrategy = new ShareViaEmail();
-//	}
+	public BasicCameraApp() {
+		this.shareStrategy = new ShareViaEmail();
+	}
 }
-
-//
-//class CameraAppPremium extends Photography {
-//	@Override
-//	void edit() {
-//		System.out.println("adding no filter...");
-//	}
-//	
-//	public CameraAppPremium() {
-//		shareBehavior = new ShareViaWhatsApp();
-//	}
-//}
