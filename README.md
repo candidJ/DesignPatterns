@@ -1,2 +1,2 @@
 # DesignPatternsInJava
-Design patterns described by Gang of four
+Implementation of design pattern introduced by Gang of four in Java
