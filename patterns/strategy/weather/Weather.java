@@ -4,11 +4,11 @@ public class Weather {
 
     ForecastInterface forecastInterface;
 
-    String performForcast(){
+    String performForcast() {
         return this.forecastInterface.forecast();
     }
 
-   void setForecastBehavior(ForecastInterface forecastInterface){
+    void setForecastBehavior(ForecastInterface forecastInterface) {
         this.forecastInterface = forecastInterface;
     }
 

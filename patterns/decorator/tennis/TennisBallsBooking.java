@@ -1,8 +1,8 @@
 package patterns.decorator.tennis;
 
-public class TennisBallsBooking extends TennisCourtBookingDecorator{
+public class TennisBallsBooking extends TennisCourtBookingDecorator {
     public TennisBallsBooking(TennisCourtBookingBase tennisCourtBookingBase) {
-       this.tennisCourtBookingBase = tennisCourtBookingBase;
+        this.tennisCourtBookingBase = tennisCourtBookingBase;
     }
 
     @Override

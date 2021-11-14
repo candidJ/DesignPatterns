@@ -2,11 +2,11 @@ package patterns.decorator.tennis;
 
 public class TennisHardCourtBooking extends TennisCourtBookingBase {
 
-    public TennisHardCourtBooking(){
+    public TennisHardCourtBooking() {
         this.description = "Hard court booking";
     }
 
-    double cost(){
+    double cost() {
         return 99;
     }
 }

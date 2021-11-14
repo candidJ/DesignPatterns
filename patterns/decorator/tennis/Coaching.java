@@ -2,7 +2,7 @@ package patterns.decorator.tennis;
 
 public class Coaching extends TennisCourtBookingDecorator {
 
-    public Coaching(TennisCourtBookingBase tennisCourtBookingBase){
+    public Coaching(TennisCourtBookingBase tennisCourtBookingBase) {
         this.tennisCourtBookingBase = tennisCourtBookingBase;
     }
 
