@@ -2,25 +2,24 @@ package patterns.observer;
 
 public class LoggerObserver implements Observer {
 
-	WeatherStationPublisher weatherStation;
+    WeatherStationPublisher weatherStation;
 
-	public LoggerObserver(WeatherStationPublisher weatherStation) {
-		this.weatherStation = weatherStation;
-		this.weatherStation.registerObserver(this);
-	}
+    public LoggerObserver(WeatherStationPublisher weatherStation) {
+        this.weatherStation = weatherStation;
+        // registered in ObserverMainApplication Class
+//        this.weatherStation.registerObserver(this);
+    }
 
+    private void log() {
+        System.out.println("Logger Observer...");
+    }
 
-	private void log() {
-		System.out.println("displaying logs...");
-	}
+    @Override
+    public void alert(double temperature, double windSpeed, String pressure) {
+        log();
+        System.out.println(
+                "Logs: " + "temp- " + temperature + " wind speed- " + windSpeed + " pressure- " + pressure);
 
-
-	@Override
-	public void alert(double temperature, double windSpeed, String pressure) {
-		log();
-		System.out.println(
-				"Logs: " + "temp- " + temperature + " wind speed- " + windSpeed + " pressure- " + pressure);
-		
-	}
+    }
 
 }

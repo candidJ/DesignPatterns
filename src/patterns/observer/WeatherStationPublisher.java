@@ -41,15 +41,15 @@ public class WeatherStationPublisher implements WeatherStation<Observer> {
 
 	@Override
 	public void removeObserver(Observer observer) {
-		int i = observers.indexOf(observer);
-		if (i > 0) {
-			observers.remove(i);
+		int observerIndex = observers.indexOf(observer);
+		if (observerIndex > 0) {
+			observers.remove(observerIndex);
 		}
 	}
 
 	@Override
 	public void notifyObservers() {
-		System.out.println("notifying registered observers....");
+		System.out.println("Notifying registered Observers...");
 		for (Observer observer : observers) {
 			observer.alert(temperature, windSpeed, pressure);
 		}

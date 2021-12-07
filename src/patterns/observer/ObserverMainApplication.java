@@ -2,31 +2,20 @@ package patterns.observer;
 
 public class ObserverMainApplication {
 
-	public static void main(String[] args) {
-		WeatherStationPublisher weatherStation = new WeatherStationPublisher();
-		// Initialize the observers
-		Observer logger = new LoggerObserver(weatherStation);
-		Observer alert = new AlertSystemObserver(weatherStation);
-		Observer ui = new UserInterfaceObserver(weatherStation);
-//		weatherStation.setPressure("HIGH");
-//		weatherStation.setTemperature(11.33);
-//		weatherStation.setWindSpeed(90);
+    public static void main(String[] args) {
+        WeatherStationPublisher weatherStationPublisher = new WeatherStationPublisher();
+        // Initialize the observers
+        Observer logger = new LoggerObserver(weatherStationPublisher);
+        Observer alert = new AlertSystemObserver(weatherStationPublisher);
+        Observer ui = new UserInterfaceObserver(weatherStationPublisher);
+        // alternative way to register to receive update notifications
+//        weatherStationPublisher.registerObserver(ui);
+        weatherStationPublisher.registerObserver(logger);
+//        weatherStationPublisher.registerObserver(alert);
+        // Initialize the weather station to set of values
+        weatherStationPublisher.setMeasurements(90, 112.2, "HIGH");
+        weatherStationPublisher.setMeasurements(99, 78, "LOW");
+    }
 
-//		weatherStation.registerObserver(new UserInterfaceObserver());
-//		weatherStation.registerObserver(new LoggerObserver());
-
-		// Initialize the weather station to set of values
-		weatherStation.setMeasurements(90, 112.2, "HIGH");
-		weatherStation.setMeasurements(99, 78, "LOW");
-//		checkWeatherAttributes(weatherStation);
-	}
-
-	private static void checkWeatherAttributes(WeatherStationPublisher weatherStation) {
-
-		if (weatherStation.getPressure() == "HIGH") {
-			System.out.println("checking weather attributes..." + weatherStation.getPressure());
-			weatherStation.notifyObservers();
-		}
-	}
 
 }
