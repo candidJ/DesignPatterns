@@ -1,4 +1,4 @@
-package patterns.observer.lab1;
+package patterns.observer;
 
 public interface Observer {
 

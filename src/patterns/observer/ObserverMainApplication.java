@@ -1,6 +1,6 @@
-package patterns.observer.lab1;
+package patterns.observer;
 
-public class Application {
+public class ObserverMainApplication {
 
 	public static void main(String[] args) {
 		WeatherStationPublisher weatherStation = new WeatherStationPublisher();
@@ -15,7 +15,7 @@ public class Application {
 //		weatherStation.registerObserver(new UserInterfaceObserver());
 //		weatherStation.registerObserver(new LoggerObserver());
 
-		// Initialize the weathe station to set of values
+		// Initialize the weather station to set of values
 		weatherStation.setMeasurements(90, 112.2, "HIGH");
 		weatherStation.setMeasurements(99, 78, "LOW");
 //		checkWeatherAttributes(weatherStation);
