@@ -2,7 +2,6 @@ package patterns.builder.lab1;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Map;
 
 public class BuilderMain {
     public static void main(String args[]) {

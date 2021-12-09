@@ -16,7 +16,7 @@ public class WeatherApplication {
         String hello = "hello";
         System.out.println("The hash code of hello is " + hello.hashCode());
 
-        Map<String, String> myHashMap = new HashMap();
+        Map<String, String> myHashMap = new HashMap<String, String>();
         myHashMap.put("name", "Jaskirat");
         String myName = myHashMap.get("name");
         System.out.println("the value of name is " + myName);
