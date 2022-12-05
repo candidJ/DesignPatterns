@@ -10,7 +10,7 @@ public class AddressValidation extends ValidateDecorator {
 	}
 
 	@Override
-	void validate(CustomerBase customer) {
+	void validate(CustomerContext customer) {
 		this.address.validate(customer);
 		if (customer.getAddress().isEmpty()) {
 			try {

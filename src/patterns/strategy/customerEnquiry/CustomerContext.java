@@ -1,6 +1,6 @@
 package patterns.strategy.customerEnquiry;
 
-public abstract class CustomerBase {
+public abstract class CustomerContext {
 
 	int age;
 	String name;
@@ -9,7 +9,7 @@ public abstract class CustomerBase {
 
 	@Override
 	public String toString() {
-		return "CustomerBase [age=" + age + ", name=" + name + ", phone=" + phone + ", address=" + address + "]";
+		return "CustomerContext [age=" + age + ", name=" + name + ", phone=" + phone + ", address=" + address + "]";
 	}
 
 	public int getAge() {
@@ -44,7 +44,7 @@ public abstract class CustomerBase {
 		this.address = address;
 	}
 
-	public CustomerBase(int age, String name, int phone, String address) {
+	public CustomerContext(int age, String name, int phone, String address) {
 		super();
 		this.age = age;
 		this.name = name;
@@ -52,13 +52,13 @@ public abstract class CustomerBase {
 		this.address = address;
 	}
 
-	ValidateStrategy<CustomerBase> validateStrategy = null;
+	ValidateStrategy<CustomerContext> validateStrategy = null;
 
-	void performValidation() {
+	void validate() {
 		this.validateStrategy.validate(this);
 	}
 
-	void setValidationStrategy(ValidateStrategy<CustomerBase> obj) {
+	void setValidationStrategy(ValidateStrategy<CustomerContext> obj) {
 		this.validateStrategy = obj;
 	}
 

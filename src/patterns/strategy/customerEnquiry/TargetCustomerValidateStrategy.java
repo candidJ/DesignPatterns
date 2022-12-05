@@ -1,9 +1,9 @@
 package patterns.strategy.customerEnquiry;
 
-public class ValidationTargetCustomer implements ValidateStrategy<CustomerBase> {
+public class TargetCustomerValidateStrategy implements ValidateStrategy<CustomerContext> {
 
 	@Override
-	public void validate(CustomerBase customer) {
+	public void validate(CustomerContext customer) {
 		Validations.validateAddress(customer);
 		Validations.validatePhone(customer);
 		Validations.validateAge(customer);
