@@ -1,5 +1,5 @@
 package patterns.strategy.weather;
 
-public interface ForecastInterface {
+public interface ForecastStrategy {
     public String forecast();
 }

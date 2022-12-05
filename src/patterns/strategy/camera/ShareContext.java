@@ -5,6 +5,11 @@ public class ShareContext {
 	// Context composes of the Strategy
 	ShareStrategy shareStrategy;
 
+	// client will set the desired behavior at run time by calling this method
+	public void setShareStrategy(ShareStrategy share) {
+		this.shareStrategy = share;
+	}
+
 	public ShareStrategy getShareStrategy() {
 		return shareStrategy;
 	}
@@ -13,9 +18,5 @@ public class ShareContext {
 		shareStrategy.share();
 	}
 
-	// client will set the desired behavior at run time by calling this method
-	public void setShareStrategy(ShareStrategy share) {
-		this.shareStrategy = share;
-	}
 
 }
