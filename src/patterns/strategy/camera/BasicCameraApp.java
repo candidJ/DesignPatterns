@@ -1,10 +1,7 @@
 package patterns.strategy.camera;
 
-public class BasicCameraApp extends PhotoBehavior {
-
-	void edit() {
-		System.out.println("no filter applied...");
-	}
+// concrete sub class implements a specific kind of behavior when initialized
+public class BasicCameraApp extends ShareContext {
 
 	public BasicCameraApp() {
 		this.shareStrategy = new ShareViaEmail();

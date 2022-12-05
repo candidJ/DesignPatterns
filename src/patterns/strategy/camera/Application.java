@@ -5,47 +5,51 @@ import java.util.Scanner;
 public class Application {
 
 	public static void main(String[] args) {
-		PhotoBehavior basicCameraApp = new BasicCameraApp();
-		PhotoBehavior cameraAppPlus  = new CameraAppPlus();
-		basicCameraApp.performShare();
-		System.out.println("Before set behavior of Basic Camera App");
-		cameraAppPlus.performShare();
-		System.out.println("Before set behavior of Camera App Plus");
 
-		String userChoice = userSharingStrategy();
-		ShareStrategy share;
+		String userChoice = captureUserChoice();
+		ShareStrategy shareStrategy;
 
+		// depending upon the user choice, the behavior is initialized
 		switch (userChoice) {
 		case ("E"):
-			share = new ShareViaEmail();
+			shareStrategy = new ShareViaEmail();
 			break;
 		case ("T"):
-			share = new ShareViaText();
+			shareStrategy = new ShareViaText();
 			break;
 		case ("W"):
-			share = new ShareViaWhatsApp();
+			shareStrategy = new ShareViaWhatsApp();
 			break;
 		default:
-			share = new ShareViaText();
+			shareStrategy = new ShareViaText();
 			break;
 		}
 
+		// app is concrete implementation of Behavior Context
 		// basic app
-		// behavior set dynamically by user at run time
-		basicCameraApp.setSharingStragey(share);
-		// new behavior is performed
-		basicCameraApp.performShare();
+		ShareContext basicCameraApp = new BasicCameraApp();
+		basicCameraApp.share();
+		System.out.println("Basic camera app behavior by default is Share Via Email");
+		basicCameraApp.setShareStrategy(share);
+		// user selected behavior is performed which may override the default behavior 
+		basicCameraApp.share();
 
-		// plus app
-		// behavior set dynamically by user at run time
-		cameraAppPlus.setSharingStragey(share);
-		// new behavior is performed
-		cameraAppPlus.performShare();
+		// advanced app
+		ShareContext advancedCameraApp  = new AdvancedCameraApp();
+		advancedCameraApp.share();
+		System.out.println("Advanced camera app behavior by default is Share Via Whatsapp");
+		advancedCameraApp.setShareStrategy(share);
+		advancedCameraApp.share();
+
+		// alternatively, no need to create a concrete implementation of context
+		ShareContext context = new ShareContext();
+		context.setShareStrategy(shareStrategy);
+		context.share();
 	}
 
-	public static String userSharingStrategy() {
+	public static String captureUserChoice() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Choose the type: (E) email, (W) Whatsapp, (T) text ");
+		System.out.println("Choose the type: (E) e-mail, (W) Whatsapp, (T) Text ");
 		String userChoice = scanner.next();
 		scanner.close();
 		return userChoice;
