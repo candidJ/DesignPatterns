@@ -8,12 +8,17 @@ public class OlivesTopping extends ToppingsDecorator {
 		this.pizza = pizza;
 	}
 
+	@Override
 	protected String getDescription() {
 		return this.pizza.getDescription() + ", with Olives";
 	}
 
 	protected double cost() {
-		return this.pizza.cost() + 1.99;
+		return this.pizza.cost() + olivesToppingCost();
+	}
+
+	private double olivesToppingCost() {
+		return 1.99;
 	}
 
 }

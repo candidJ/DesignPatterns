@@ -3,7 +3,7 @@ package patterns.decorator.lab2;
 public class NameValidation extends BasicValidation {
 
 	@Override
-	void validate(CustomerContext customer) {
+	void validate(CustomerBase customer) {
 		System.out.println("name validation");
 		if (customer.getName().length() == 0) {
 			try {

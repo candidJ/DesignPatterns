@@ -15,7 +15,11 @@ public class PepperTopping extends ToppingsDecorator {
 
 	@Override
 	protected double cost() {
-		return this.pizza.cost();
+		return this.pizza.cost() + pepperToppingCost();
+	}
+
+	private double pepperToppingCost() {
+		return 0.99;
 	}
 
 }

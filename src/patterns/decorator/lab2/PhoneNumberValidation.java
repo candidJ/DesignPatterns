@@ -10,7 +10,7 @@ public class PhoneNumberValidation extends ValidateDecorator{
 	}
 
 	@Override
-	void validate(CustomerContext customer) {
+	void validate(CustomerBase customer) {
 		System.out.println("phone number validation...");
 		this.phone.validate(customer);
 		if(customer.getPhone().isEmpty()) {

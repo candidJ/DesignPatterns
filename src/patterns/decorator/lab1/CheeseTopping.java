@@ -15,7 +15,11 @@ public class CheeseTopping extends ToppingsDecorator {
 
 	@Override
 	protected double cost() {
-		return this.pizza.cost() + 0.99;
+		return this.pizza.cost() + cheeseToppingCost();
+	}
+
+	private double cheeseToppingCost() {
+		return 2.99;
 	}
 
 }

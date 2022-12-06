@@ -1,6 +1,6 @@
 package patterns.decorator.lab2;
 
-public abstract class CustomerContext {
+public abstract class CustomerBase {
 
 	int age;
 	String name;
@@ -9,7 +9,7 @@ public abstract class CustomerContext {
 
 	@Override
 	public String toString() {
-		return "CustomerContext [age=" + age + ", name=" + name + ", phone=" + phone + ", address=" + address + "]";
+		return "CustomerBase [age=" + age + ", name=" + name + ", phone=" + phone + ", address=" + address + "]";
 	}
 
 	public int getAge() {
@@ -44,7 +44,7 @@ public abstract class CustomerContext {
 		this.address = address;
 	}
 
-	public CustomerContext(int age, String name, String phone, String address) {
+	public CustomerBase(int age, String name, String phone, String address) {
 		super();
 		this.age = age;
 		this.name = name;

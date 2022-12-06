@@ -9,7 +9,7 @@ public abstract class ValidateDecorator extends BasicValidation {
 	}
 
 	@Override
-	void validate(CustomerContext customer) {
+	void validate(CustomerBase customer) {
 		this.validation.validate(customer);
 	}
 

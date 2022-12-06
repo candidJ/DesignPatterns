@@ -2,8 +2,9 @@ package patterns.decorator.lab1;
 
 public class ThickCrustPizza extends PizzaBase {
 
-	public ThickCrustPizza() {
-		description = "Thick Crust Pizza";
+	@Override
+	protected String getDescription() {
+		return this.description + "- Thick crust";
 	}
 
 	@Override

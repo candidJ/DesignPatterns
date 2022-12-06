@@ -1,6 +1,6 @@
 package patterns.decorator.lab2;
 
-public class TargetCustomer extends CustomerContext {
+public class TargetCustomer extends CustomerBase {
 
 	BasicValidation validation;
 

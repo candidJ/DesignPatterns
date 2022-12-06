@@ -10,16 +10,16 @@ public class AddressValidation extends ValidateDecorator {
 	}
 
 	@Override
-	void validate(CustomerContext customer) {
+	void validate(CustomerBase customer) {
 		this.address.validate(customer);
 		if (customer.getAddress().isEmpty()) {
 			try {
-				throw new Exception("please enter address");
+				throw new Exception("Please enter address");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} else {
-			System.out.println("address is valid");
+			System.out.println("Address is valid");
 		}
 
 	}
