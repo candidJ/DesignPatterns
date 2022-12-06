@@ -4,6 +4,6 @@ package patterns.strategy.camera;
 public class BasicCameraApp extends ShareContext {
 
 	public BasicCameraApp() {
-		this.shareStrategy = new ShareViaEmail();
+		this.shareStrategy = new EmailShareStrategy();
 	}
 }

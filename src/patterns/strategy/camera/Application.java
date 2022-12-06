@@ -12,16 +12,16 @@ public class Application {
 		// depending upon the user choice, the behavior is initialized
 		switch (userChoice) {
 		case ("E"):
-			shareStrategy = new ShareViaEmail();
+			shareStrategy = new EmailShareStrategy();
 			break;
 		case ("T"):
-			shareStrategy = new ShareViaText();
+			shareStrategy = new TextShareStrategy();
 			break;
 		case ("W"):
 			shareStrategy = new ShareViaWhatsApp();
 			break;
 		default:
-			shareStrategy = new ShareViaText();
+			shareStrategy = new TextShareStrategy();
 			break;
 		}
 
