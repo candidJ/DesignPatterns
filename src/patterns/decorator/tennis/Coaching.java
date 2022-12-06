@@ -8,7 +8,7 @@ public class Coaching extends TennisCourtBookingDecorator {
 
     @Override
     public String getDescription() {
-        return this.tennisCourtBookingBase.getDescription() + " ,coaching";
+        return this.tennisCourtBookingBase.getDescription() + " + coaching";
     }
 
     @Override

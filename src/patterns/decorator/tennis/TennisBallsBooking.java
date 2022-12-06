@@ -7,7 +7,7 @@ public class TennisBallsBooking extends TennisCourtBookingDecorator {
 
     @Override
     public String getDescription() {
-        return this.tennisCourtBookingBase.description + ", balls booking";
+        return this.tennisCourtBookingBase.description + " + tennis balls";
     }
 
     @Override
