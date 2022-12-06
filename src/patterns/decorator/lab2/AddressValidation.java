@@ -2,16 +2,16 @@ package patterns.decorator.lab2;
 
 public class AddressValidation extends ValidateDecorator {
 
-	BasicValidation address;
+	BasicValidation validation;
 
 	public AddressValidation(BasicValidation validation) {
 		super(validation);
-		this.address = validation;
+		this.validation = validation;
 	}
 
 	@Override
 	void validate(CustomerBase customer) {
-		this.address.validate(customer);
+		this.validation.validate(customer);
 		if (customer.getAddress().isEmpty()) {
 			try {
 				throw new Exception("Please enter address");
@@ -21,7 +21,6 @@ public class AddressValidation extends ValidateDecorator {
 		} else {
 			System.out.println("Address is valid");
 		}
-
 	}
 
 }
