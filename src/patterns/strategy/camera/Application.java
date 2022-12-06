@@ -30,7 +30,7 @@ public class Application {
 		ShareContext basicCameraApp = new BasicCameraApp();
 		basicCameraApp.share();
 		System.out.println("Basic camera app behavior by default is Share Via Email");
-		basicCameraApp.setShareStrategy(share);
+		basicCameraApp.setShareStrategy(shareStrategy);
 		// user selected behavior is performed which may override the default behavior 
 		basicCameraApp.share();
 
@@ -38,7 +38,7 @@ public class Application {
 		ShareContext advancedCameraApp  = new AdvancedCameraApp();
 		advancedCameraApp.share();
 		System.out.println("Advanced camera app behavior by default is Share Via Whatsapp");
-		advancedCameraApp.setShareStrategy(share);
+		advancedCameraApp.setShareStrategy(shareStrategy);
 		advancedCameraApp.share();
 
 		// alternatively, no need to create a concrete implementation of context
