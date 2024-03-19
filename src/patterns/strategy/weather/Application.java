@@ -3,8 +3,11 @@ public class Application {
     public static void main(String args[]) {
         ForecastContext forecastContext = new ForecastContext();
         // behavior is changed via setBehavior method
-        forecastContext.setForecastStrategy(new LatLongForecastStrategy());
+        forecastContext.setForecastStrategy(new CityNameForecastStrategy());
         // new forecast via latitude and longitude is performed
-        forecastContext.forecast();
+        String result = forecastContext.forecast();
+        
+        System.out.println(result);
+        
     }
 }
