@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface ListListener<T> {
 
-	 void onListUpdate(List<T> list, OperationType operationType, T listItem);
+	 void onListUpdate(List<T> list, OperationType operationType, Object listItem);
 }

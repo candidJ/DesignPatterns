@@ -2,7 +2,7 @@ package patterns.observer.arrayListOperations;
 
 import java.util.List;
 
-public class FirstListener<T> implements ListListener<T>{
+public class SecondListener<T> implements ListListener<T>{
 
 	@Override
 	public void onListUpdate(List<T> list, OperationType operationType, Object listItem) {

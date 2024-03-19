@@ -4,18 +4,37 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-		ObservableList<Integer> firstObservableList = new ObservableList<>();
+		ObservableList<Integer> numberListObservable = new ObservableList<Integer>();
+		ObservableList<String> wordListObservable = new ObservableList<String>();
 		
 		ListListener<Integer> firstListener = new FirstListener<Integer>();
+		ListListener<String> secondListener = new SecondListener<String>();
 		
-		firstObservableList.registerListener(firstListener);
+		numberListObservable.registerListener(firstListener);
+		wordListObservable.registerListener(secondListener);
 		
-		// add items
-		firstObservableList.add(1);
-		firstObservableList.add(2);
-		firstObservableList.add(3);
+		// add items to first observable list
+		numberListObservable.add(100);
+		numberListObservable.add(200);
+		numberListObservable.add(300);
 		
-		// TODO: remove items
+		// remove items from second observable list
+		numberListObservable.remove(1);
 		
+		// add items to second observable list
+		wordListObservable.add("Foo");
+		wordListObservable.add("Bar");
+		wordListObservable.add("Baz");
+		
+		// remove items from second observable list
+		wordListObservable.remove(0);
+		
+		// unregister listener
+		numberListObservable.removeListener(firstListener);
+		numberListObservable.add(300); // will not add an any items
+		
+		
+		// operations on registered listener word list observable continue to work
+		wordListObservable.add("Foo");
 	}
 }
