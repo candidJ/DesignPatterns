@@ -1,4 +1,4 @@
-package patterns.observer.ArrayListOperations;
+package patterns.observer.arrayListOperations;
 
 import java.util.ArrayList;
 

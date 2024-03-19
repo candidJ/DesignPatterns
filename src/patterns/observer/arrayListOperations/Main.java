@@ -1,4 +1,4 @@
-package patterns.observer.ArrayListOperations;
+package patterns.observer.arrayListOperations;
 
 public class Main {
 
