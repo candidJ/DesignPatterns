@@ -7,8 +7,8 @@ public class Main {
 		ObservableList<Integer> numberListObservable = new ObservableList<Integer>();
 		ObservableList<String> wordListObservable = new ObservableList<String>();
 		
-		ListListener<Integer> firstListener = new FirstListener<Integer>();
-		ListListener<String> secondListener = new SecondListener<String>();
+		ListListener<Integer> firstListener = new TestListener<Integer>();
+		ListListener<String> secondListener = new TestListener<String>();
 		
 		numberListObservable.registerListener(firstListener);
 		wordListObservable.registerListener(secondListener);
@@ -31,10 +31,9 @@ public class Main {
 		
 		// unregister listener
 		numberListObservable.removeListener(firstListener);
-		numberListObservable.add(300); // will not add an any items
+		numberListObservable.add(400); // should not trigger listener
 		
-		
-		// operations on registered listener word list observable continue to work
-		wordListObservable.add("Foo");
+		// operations on registered listener (wordListObservable) continue to work correctly
+		wordListObservable.add("Cyx");
 	}
 }
