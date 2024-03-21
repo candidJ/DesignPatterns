@@ -70,9 +70,9 @@ public class TestObservableList {
 		numberListObservable.add(100);
 
 		// expect each listener to have 1 invocation to onListUpdate method
-		assertEquals(1, firstListener.onListUpdateCallCount);
-		assertEquals(1, secondListener.onListUpdateCallCount);
-		assertEquals(1, thirdListener.onListUpdateCallCount);
+		Assertions.assertEquals(1, firstListener.onListUpdateCallCount);
+		Assertions.assertEquals(1, secondListener.onListUpdateCallCount);
+		Assertions.assertEquals(1, thirdListener.onListUpdateCallCount);
 		
 		
 		// unregister second listener
