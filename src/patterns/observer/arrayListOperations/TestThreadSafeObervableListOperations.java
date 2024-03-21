@@ -25,7 +25,7 @@ public class TestThreadSafeObervableListOperations {
 	@Test
 	void testThreadSafeOperations() throws InterruptedException {
 		
-		int numberOfThreads = 1000;
+		int numberOfThreads = 10;
 		int numberOfOperationsPerThread = 1000;
 		
 		  ExecutorService executorService = Executors.newFixedThreadPool(numberOfOperationsPerThread);
@@ -36,21 +36,23 @@ public class TestThreadSafeObervableListOperations {
 		  
 		  observableList.registerListener(mockTestListener);
 		
-		  for(int index = 0; index < numberOfThreads; index++) {
+		  for(int outerIterator = 0; outerIterator < numberOfThreads; outerIterator++) {
 			  // start a new thread
 			  executorService.execute(()-> {
-				  observableList.add(1);
-				  observableList.remove(Integer.valueOf(1));
-				  
+				  for(int innerIterator = 0; innerIterator< numberOfOperationsPerThread; innerIterator++) {
+					  observableList.add(innerIterator);
+					  observableList.remove(Integer.valueOf(innerIterator));
+				  }
 				  countDownLatch.countDown();
 			  });
 		  }
 		  
-		  // wait for thread to finish execution
 		  countDownLatch.await();
 
-		  Assertions.assertEquals(mockTestListener.onListUpdateCallCount, numberOfOperationsPerThread * 2);
 		  executorService.shutdown();
+		  
+		  Assertions.assertEquals(mockTestListener.onListUpdateCallCount, numberOfThreads * numberOfOperationsPerThread * 2);
+		  
 	}
 
 }
