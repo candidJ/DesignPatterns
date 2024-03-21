@@ -1,20 +1,22 @@
 package patterns.observer.arrayListOperations;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class ObservableList<T> extends java.util.ArrayList<T> {
 
-	private ArrayList<ListListener<T>> listeners = new ArrayList<>();
+	private List<ListListener<T>> listeners = Collections.synchronizedList(new ArrayList<>());
 
-	public void registerListener(ListListener<T> listener) {
+	public synchronized void registerListener(ListListener<T> listener) {
 		listeners.add(listener);
 	}
 
-	public void removeListener(ListListener<T> listener) {
+	public synchronized void removeListener(ListListener<T> listener) {
 		listeners.remove(listener);
 	}
 
-	public void notifyListeners(OperationType operationType, Object item) {
+	private synchronized void notifyListeners(OperationType operationType, Object item) {
 		for (ListListener<T> listener : listeners) {
 			listener.onListUpdate(this, operationType, item);
 		}
@@ -23,7 +25,7 @@ public class ObservableList<T> extends java.util.ArrayList<T> {
 
 	// Add operations
 	@Override
-	public boolean add(T item) {
+	public synchronized boolean add(T item) {
 		boolean isItemAddedToTheList = false;
 		try {
 			isItemAddedToTheList = super.add(item);
@@ -36,7 +38,7 @@ public class ObservableList<T> extends java.util.ArrayList<T> {
 	}
 
 	@Override
-	public void add(int index, T item) {
+	public synchronized void add(int index, T item) {
 		try {
 			super.add(index, item);
 			// notify each subscriber when new item is ADDED to list
@@ -50,7 +52,7 @@ public class ObservableList<T> extends java.util.ArrayList<T> {
 
 	// Remove operations
 	@Override
-	public T remove(int index) {
+	public synchronized T remove(int index) {
 		T removedItem = null;
 		try {
 			removedItem = super.remove(index);
@@ -65,7 +67,7 @@ public class ObservableList<T> extends java.util.ArrayList<T> {
 	}
 
 	@Override
-	public boolean remove(Object item) {
+	public synchronized boolean remove(Object item) {
 		boolean isItemRemovedToTheList = false;
 		try {
 			isItemRemovedToTheList = super.remove(item);
