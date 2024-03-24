@@ -8,30 +8,6 @@ public class WeatherStationPublisher implements WeatherStation<Observer> {
 	private double windSpeed;
 	private String pressure;
 
-	public double getTemperature() {
-		return temperature;
-	}
-
-	public void setTemperature(double temperature) {
-		this.temperature = temperature;
-	}
-
-	public double getWindSpeed() {
-		return windSpeed;
-	}
-
-	public void setWindSpeed(double windSpeed) {
-		this.windSpeed = windSpeed;
-	}
-
-	public String getPressure() {
-		return pressure;
-	}
-
-	public void setPressure(String pressure) {
-		this.pressure = pressure;
-	}
-
 	private ArrayList<Observer> observers = new ArrayList<Observer>();
 
 	@Override

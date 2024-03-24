@@ -7,7 +7,7 @@ public class LoggerObserver implements Observer {
     public LoggerObserver(WeatherStationPublisher weatherStation) {
         this.weatherStation = weatherStation;
         // registered in ObserverMainApplication Class
-//        this.weatherStation.registerObserver(this);
+        // this.weatherStation.registerObserver(this);
     }
 
     private void log() {
@@ -18,8 +18,7 @@ public class LoggerObserver implements Observer {
     public void alert(double temperature, double windSpeed, String pressure) {
         log();
         System.out.println(
-                "Logs: " + "temp- " + temperature + " wind speed- " + windSpeed + " pressure- " + pressure);
-
+                " Temperature: " + temperature + "\n Wind Speed: " + windSpeed + "\n Pressure: " + pressure);
     }
 
 }

@@ -17,7 +17,7 @@ public class UserInterfaceObserver implements Observer {
     public void alert(double temperature, double windSpeed, String pressure) {
         display();
         System.out.println(
-                "User interface is: " + " temp- " + temperature + " wind speed- " + windSpeed + " pressure- " + pressure);
+                " Temperature: " + temperature + "\n Wind Speed: " + windSpeed + "\n Pressure: " + pressure);
 
     }
 
