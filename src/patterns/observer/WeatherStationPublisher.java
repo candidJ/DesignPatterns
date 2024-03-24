@@ -2,7 +2,7 @@ package patterns.observer;
 
 import java.util.ArrayList;
 
-public class WeatherStationPublisher implements WeatherStation<Observer> {
+public class WeatherStationPublisher {
 
 	private double temperature;
 	private double windSpeed;
@@ -10,12 +10,10 @@ public class WeatherStationPublisher implements WeatherStation<Observer> {
 
 	private ArrayList<Observer> observers = new ArrayList<Observer>();
 
-	@Override
 	public void registerObserver(Observer observer) {
 		observers.add(observer);
 	}
 
-	@Override
 	public void removeObserver(Observer observer) {
 		int observerIndex = observers.indexOf(observer);
 		if (observerIndex > 0) {
@@ -23,8 +21,7 @@ public class WeatherStationPublisher implements WeatherStation<Observer> {
 		}
 	}
 
-	@Override
-	public void notifyObservers() {
+	private void notifyObservers() {
 		System.out.println("Notifying registered Observers...");
 		for (Observer observer : observers) {
 			observer.alert(temperature, windSpeed, pressure);
