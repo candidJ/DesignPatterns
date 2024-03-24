@@ -1,6 +1,6 @@
-package patterns.observer;
+package patterns.observer.weatherStation;
 
-public class ObserverMainApplication {
+public class WeatherStationApplication {
 
 	public static void main(String[] args) {
 		WeatherStationPublisher weatherStationPublisher = new WeatherStationPublisher();

@@ -18,7 +18,7 @@ public abstract class Pizza {
 	}
 
 	void bake() {
-		System.out.println("Baking at 30 degress for 25 minutes");
+		System.out.println("Baking at 30 degrees for 25 minutes");
 	}
 
 	void cut() {

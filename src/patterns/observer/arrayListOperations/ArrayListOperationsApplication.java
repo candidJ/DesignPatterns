@@ -1,6 +1,6 @@
 package patterns.observer.arrayListOperations;
 
-public class Main {
+public class ArrayListOperationsApplication {
 
 	public static void main(String[] args) {
 	

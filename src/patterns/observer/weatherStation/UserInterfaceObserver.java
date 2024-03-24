@@ -1,4 +1,4 @@
-package patterns.observer;
+package patterns.observer.weatherStation;
 
 public class UserInterfaceObserver implements Observer {
 
