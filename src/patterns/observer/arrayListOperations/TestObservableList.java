@@ -46,6 +46,8 @@ public class TestObservableList {
 		wordListObservable.remove("Foo");
 
 		wordListObservable.add("Cpt");
+		
+		wordListObservable.set(0, null);
 
 		List testList = List.of("Bar", "Baz", "Cpt");
 		Assertions.assertTrue(testList.size() == wordListObservable.size() && testList.containsAll(wordListObservable)

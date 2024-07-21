@@ -27,7 +27,6 @@ public class TestThreadSafeObervableListOperations {
 		int numberOfThreads = 10;
 		int numberOfOperationsPerThread = 1000;
 
-		// a fixed size thread-pool of 10
 		ExecutorService executorService = Executors.newFixedThreadPool(numberOfThreads);
 		CountDownLatch countDownLatch = new CountDownLatch(numberOfThreads);
 
@@ -37,7 +36,7 @@ public class TestThreadSafeObervableListOperations {
 		observableList.registerListener(mockTestListener);
 
 		for (int outerIterator = 0; outerIterator < numberOfThreads; outerIterator++) {
-			// give thread-pool task to execute
+			// give thread-pool tasks to execute
 			// thread pool internally uses blocking queue so add and remove operations must be synchronized
 			executorService.execute(() -> {
 				for (int innerIterator = 0; innerIterator < numberOfOperationsPerThread; innerIterator++) {

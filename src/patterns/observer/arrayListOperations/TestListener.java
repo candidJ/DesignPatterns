@@ -2,6 +2,7 @@ package patterns.observer.arrayListOperations;
 
 import java.util.List;
 
+// Concrete Subscriber
 public class TestListener<T> implements ListListener<T>{
 
 	@Override

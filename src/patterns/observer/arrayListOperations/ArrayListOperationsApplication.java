@@ -3,37 +3,36 @@ package patterns.observer.arrayListOperations;
 public class ArrayListOperationsApplication {
 
 	public static void main(String[] args) {
-	
+
+		// instances of Producer/Subject
 		ObservableList<Integer> numberListObservable = new ObservableList<Integer>();
 		ObservableList<String> wordListObservable = new ObservableList<String>();
-		
+
+		// instance of subscribers/observers/listener
 		ListListener<Integer> firstListener = new TestListener<Integer>();
 		ListListener<String> secondListener = new TestListener<String>();
-		
+
+		// register/add the Subscribers to Producers
 		numberListObservable.registerListener(firstListener);
 		wordListObservable.registerListener(secondListener);
-		
-		// add items to first observable list
+
+		// Performing operations(ADD and REMOVE) on Producer will trigger notification to all Listeners
 		numberListObservable.add(100);
 		numberListObservable.add(200);
 		numberListObservable.add(300);
-		
-		// remove items from second observable list
 		numberListObservable.remove(1);
-		
-		// add items to second observable list
+
 		wordListObservable.add("Foo");
 		wordListObservable.add("Bar");
 		wordListObservable.add("Baz");
-		
-		// remove items from second observable list
 		wordListObservable.remove(0);
-		
-		// unregister listener
+
+		// unsubscribe a listener ('firstListener')
 		numberListObservable.removeListener(firstListener);
-		numberListObservable.add(400); // should not trigger listener
-		
-		// operations on registered listener (wordListObservable) continue to work correctly
+		// should not trigger notification for unregistered listener ('firstListener')
+		numberListObservable.add(400);
+
+		// operations on Subject continues to trigger notification on registered listener (wordListObservable)
 		wordListObservable.add("Cyx");
 	}
 }
