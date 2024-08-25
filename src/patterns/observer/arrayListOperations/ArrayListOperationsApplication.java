@@ -5,12 +5,12 @@ public class ArrayListOperationsApplication {
 	public static void main(String[] args) {
 
 		// instances of Producer/Subject
-		ObservableList<Integer> numberListObservable = new ObservableList<Integer>();
-		ObservableList<String> wordListObservable = new ObservableList<String>();
+		ObservableList<Integer> numberListObservable = new ObservableList<>();
+		ObservableList<String> wordListObservable = new ObservableList<>();
 
 		// instance of subscribers/observers/listener
-		ListListener<Integer> firstListener = new TestListener<Integer>();
-		ListListener<String> secondListener = new TestListener<String>();
+		ListListener<Integer> firstListener = new TestListener<>();
+		ListListener<String> secondListener = new TestListener<>();
 
 		// register/add the Subscribers to Producers
 		numberListObservable.registerListener(firstListener);

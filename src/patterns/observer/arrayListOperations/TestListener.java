@@ -2,8 +2,8 @@ package patterns.observer.arrayListOperations;
 
 import java.util.List;
 
-// Concrete Subscriber
-public class TestListener<T> implements ListListener<T>{
+// Concrete Subscriber/Listener
+public class TestListener<T> implements ListListener<T> {
 
 	@Override
 	public void onListUpdate(List<T> list, OperationType operationType, Object listItem) {

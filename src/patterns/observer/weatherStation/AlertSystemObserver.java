@@ -17,7 +17,7 @@ public class AlertSystemObserver implements Observer {
 	@Override
 	public void alert(double temperature, double windSpeed, String pressure) {
 		log();
-		if (pressure == "HIGH") {
+		if (pressure.equals("HIGH")) {
 			System.out.println("Alert for high pressure");
 		} else {
 			System.out.println("Pressure is normal");

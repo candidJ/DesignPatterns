@@ -8,7 +8,7 @@ public class WeatherStationPublisher {
 	private double windSpeed;
 	private String pressure;
 
-	private ArrayList<Observer> observers = new ArrayList<Observer>();
+	private final ArrayList<Observer> observers = new ArrayList<>();
 
 	public void registerObserver(Observer observer) {
 		observers.add(observer);
