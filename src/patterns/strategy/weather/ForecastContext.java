@@ -1,9 +1,8 @@
 package patterns.strategy.weather;
 
 /**
- * Forecast Context class contains the Forecast Strategy Interface
+ * Forecast Context class is 'composed' of Forecast Strategy Interface
  */
-
 public class ForecastContext {
 
     ForecastStrategy forecastStrategy;

@@ -1,6 +1,8 @@
 package patterns.strategy.weather;
+
 public class Application {
-    public static void main(String args[]) {
+
+    public static void main(String[] args) {
         ForecastContext forecastContext = new ForecastContext();
         // behavior is changed via setBehavior method
         forecastContext.setForecastStrategy(new CityNameForecastStrategy());
@@ -8,6 +10,6 @@ public class Application {
         String result = forecastContext.forecast();
         
         System.out.println(result);
-        
     }
+
 }

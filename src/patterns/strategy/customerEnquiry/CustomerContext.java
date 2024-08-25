@@ -1,6 +1,7 @@
 package patterns.strategy.customerEnquiry;
 
-public abstract class CustomerContext {
+// Context is 'composed' of Strategy.
+public class CustomerContext {
 
 	int age;
 	String name;
@@ -52,14 +53,14 @@ public abstract class CustomerContext {
 		this.address = address;
 	}
 
-	ValidateStrategy<CustomerContext> validateStrategy = null;
+	ValidateStrategy<CustomerContext> validateStrategy;
 
 	void validate() {
 		this.validateStrategy.validate(this);
 	}
 
-	void setValidationStrategy(ValidateStrategy<CustomerContext> obj) {
-		this.validateStrategy = obj;
+	void setValidationStrategy(ValidateStrategy<CustomerContext> validateStrategy) {
+		this.validateStrategy = validateStrategy;
 	}
 
 }
