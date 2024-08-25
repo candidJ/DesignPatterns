@@ -6,7 +6,9 @@ public class LoggerObserver implements Observer {
 
     public LoggerObserver(WeatherStationPublisher weatherStation) {
         this.weatherStation = weatherStation;
-        // registered in ObserverMainApplication Class
+        // The LoggerObserver is registered in ObserverMainApplication(main) Class
+
+        // Alternative way to register:
         // this.weatherStation.registerObserver(this);
     }
 

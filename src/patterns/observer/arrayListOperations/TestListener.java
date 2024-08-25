@@ -13,5 +13,4 @@ public class TestListener<T> implements ListListener<T>{
 			System.out.println("Item "+ listItem + " is" + (operationType == OperationType.ADD ? " added" : " removed")+ ". Updated List: " + list);
 		}
 	}
-
 }

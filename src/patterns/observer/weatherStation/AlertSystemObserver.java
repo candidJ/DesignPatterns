@@ -6,7 +6,7 @@ public class AlertSystemObserver implements Observer {
 
 	public AlertSystemObserver(WeatherStationPublisher weatherStation) {
 		this.weatherStation = weatherStation;
-		// observer with register for future updates
+		// register AlertSystemObserver for future updates
 		this.weatherStation.registerObserver(this);
 	}
 
